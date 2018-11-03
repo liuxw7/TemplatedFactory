@@ -1,23 +1,202 @@
 {
-  "configurations": [
-    {
-        "name": "x86-Debug",
-        "generator": "Ninja",
-        "configurationType": "Debug",
-        "inheritEnvironments": [
-            "msvc_x86"
-        ],
-        "buildRoot": "${env.USERPROFILE}\\CMakeBuilds\\${workspaceHash}\\build\\${name}",
-        "installRoot": "${env.USERPROFILE}\\CMakeBuilds\\${workspaceHash}\\install\\${name}",
-        "cmakeCommandArgs": "",
-        "buildCommandArgs": "-v",
-        "ctestCommandArgs": "",
-        "variables": [
-            {
-                "name": "CMAKE_TOOLCHAIN_FILE",
-                "value": "D:/Program Files/vcpkg/scripts/buildsystems/vcpkg.cmake"
-            }
-        ]
-    }
-  ]
+    //VCPK has to be replace, Tool Chain File will be used by every configuration
+    //Clang-CL has to be in the path
+    "configurations": [
+        //CL-Debug
+        {
+            "name": "cl-x86-debug",
+            "generator": "Ninja",
+            "configurationType": "Debug",
+            "inheritEnvironments": [
+                "msvc_x86"
+            ],
+            "buildRoot": "${env.USERPROFILE}\\CMakeBuilds\\${workspaceHash}\\build\\${name}",
+            "installRoot": "${env.USERPROFILE}\\CMakeBuilds\\${workspaceHash}\\install\\${name}",
+
+            "cmakeCommandArgs": "",
+            "buildCommandArgs": "-v",
+            "ctestCommandArgs": "",
+            "variables": [
+                {
+                    "name": "CMAKE_TOOLCHAIN_FILE",
+                    "value": "D:/Program Files/vcpkg/scripts/buildsystems/vcpkg.cmake"
+                }
+            ]
+        },
+        {
+            "name": "cl-x64-debug",
+            "generator": "Ninja",
+            "configurationType": "Debug",
+            "inheritEnvironments": [
+                "msvc_x64"
+            ],
+            "buildRoot": "${env.USERPROFILE}\\CMakeBuilds\\${workspaceHash}\\build\\${name}",
+            "installRoot": "${env.USERPROFILE}\\CMakeBuilds\\${workspaceHash}\\install\\${name}",
+
+            "cmakeCommandArgs": "",
+            "buildCommandArgs": "-v",
+            "ctestCommandArgs": "",
+            "variables": [
+                {
+                    "name": "CMAKE_TOOLCHAIN_FILE",
+                    "value": "D:/Program Files/vcpkg/scripts/buildsystems/vcpkg.cmake"
+                }
+            ]
+        },
+        //CL-Release
+        {
+            "name": "cl-x86-release",
+            "generator": "Ninja",
+            "configurationType": "Release",
+            "inheritEnvironments": [
+                "msvc_x86"
+            ],
+            "buildRoot": "${env.USERPROFILE}\\CMakeBuilds\\${workspaceHash}\\build\\${name}",
+            "installRoot": "${env.USERPROFILE}\\CMakeBuilds\\${workspaceHash}\\install\\${name}",
+
+            "cmakeCommandArgs": "",
+            "buildCommandArgs": "-v",
+            "ctestCommandArgs": "",
+            "variables": [
+                {
+                    "name": "CMAKE_TOOLCHAIN_FILE",
+                    "value": "D:/Program Files/vcpkg/scripts/buildsystems/vcpkg.cmake"
+                }
+            ]
+        },
+        {
+            "name": "cl-x64-release",
+            "generator": "Ninja",
+            "configurationType": "Release",
+            "inheritEnvironments": [
+                "msvc_x64"
+            ],
+            "buildRoot": "${env.USERPROFILE}\\CMakeBuilds\\${workspaceHash}\\build\\${name}",
+            "installRoot": "${env.USERPROFILE}\\CMakeBuilds\\${workspaceHash}\\install\\${name}",
+
+            "cmakeCommandArgs": "",
+            "buildCommandArgs": "-v",
+            "ctestCommandArgs": "",
+            "variables": [
+                {
+                    "name": "CMAKE_TOOLCHAIN_FILE",
+                    "value": "D:/Program Files/vcpkg/scripts/buildsystems/vcpkg.cmake"
+                }
+            ]
+        },
+        //Clang-Debug
+        {
+            "name": "clang-x86-debug",
+            "generator": "Ninja",
+            "configurationType": "Debug",
+            "inheritEnvironments": [
+                "msvc_x86"
+            ],
+            "buildRoot": "${env.USERPROFILE}\\CMakeBuilds\\${workspaceHash}\\build\\${name}",
+            "installRoot": "${env.USERPROFILE}\\CMakeBuilds\\${workspaceHash}\\install\\${name}",
+
+            "cmakeCommandArgs": "",
+            "buildCommandArgs": "-v",
+            "ctestCommandArgs": "",
+            "variables": [
+                {
+                    "name": "CMAKE_CXX_COMPILER",
+                    "value": "clang-cl"
+                },
+                {
+                    "name": "CMAKE_C_COMPILER",
+                    "value": "clang-cl"
+                },
+                {
+                    "name": "CMAKE_TOOLCHAIN_FILE",
+                    "value": "D:/Program Files/vcpkg/scripts/buildsystems/vcpkg.cmake"
+                }
+            ]
+        },
+        {
+            "name": "clang-x64-debug",
+            "generator": "Ninja",
+            "configurationType": "Debug",
+            "inheritEnvironments": [
+                "msvc_x64"
+            ],
+            "buildRoot": "${env.USERPROFILE}\\CMakeBuilds\\${workspaceHash}\\build\\${name}",
+            "installRoot": "${env.USERPROFILE}\\CMakeBuilds\\${workspaceHash}\\install\\${name}",
+
+            "cmakeCommandArgs": "",
+            "buildCommandArgs": "-v",
+            "ctestCommandArgs": "",
+            "variables": [
+                {
+                    "name": "CMAKE_CXX_COMPILER",
+                    "value": "clang-cl"
+                },
+                {
+                    "name": "CMAKE_C_COMPILER",
+                    "value": "clang-cl"
+                },
+                {
+                    "name": "CMAKE_TOOLCHAIN_FILE",
+                    "value": "D:/Program Files/vcpkg/scripts/buildsystems/vcpkg.cmake"
+                }
+            ]
+        },
+        //Clang-Release
+        {
+            "name": "clang-x86-release",
+            "generator": "Ninja",
+            "configurationType": "Release",
+            "inheritEnvironments": [
+                "msvc_x86"
+            ],
+            "buildRoot": "${env.USERPROFILE}\\CMakeBuilds\\${workspaceHash}\\build\\${name}",
+            "installRoot": "${env.USERPROFILE}\\CMakeBuilds\\${workspaceHash}\\install\\${name}",
+
+            "cmakeCommandArgs": "",
+            "buildCommandArgs": "-v",
+            "ctestCommandArgs": "",
+            "variables": [
+                {
+                    "name": "CMAKE_CXX_COMPILER",
+                    "value": "clang-cl"
+                },
+                {
+                    "name": "CMAKE_C_COMPILER",
+                    "value": "clang-cl"
+                },
+                {
+                    "name": "CMAKE_TOOLCHAIN_FILE",
+                    "value": "D:/Program Files/vcpkg/scripts/buildsystems/vcpkg.cmake"
+                }
+            ]
+        },
+        {
+            "name": "clang-x64-release",
+            "generator": "Ninja",
+            "configurationType": "Release",
+            "inheritEnvironments": [
+                "msvc_x64"
+            ],
+            "buildRoot": "${env.USERPROFILE}\\CMakeBuilds\\${workspaceHash}\\build\\${name}",
+            "installRoot": "${env.USERPROFILE}\\CMakeBuilds\\${workspaceHash}\\install\\${name}",
+
+            "cmakeCommandArgs": "",
+            "buildCommandArgs": "-v",
+            "ctestCommandArgs": "",
+            "variables": [
+                {
+                    "name": "CMAKE_CXX_COMPILER",
+                    "value": "clang-cl"
+                },
+                {
+                    "name": "CMAKE_C_COMPILER",
+                    "value": "clang-cl"
+                },
+                {
+                    "name": "CMAKE_TOOLCHAIN_FILE",
+                    "value": "D:/Program Files/vcpkg/scripts/buildsystems/vcpkg.cmake"
+                }
+            ]
+        }
+    ]
 }
