@@ -1,1 +1,1 @@
-# TemplateFactory
+# Self Registering Factory
